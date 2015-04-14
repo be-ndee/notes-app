@@ -1,2 +1,8 @@
+# meteor
 .meteor/local
 .meteor/meteorite
+
+# sass
+.sass-cache
+*.css
+*.css.map
