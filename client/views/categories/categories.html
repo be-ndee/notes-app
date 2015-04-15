@@ -1,0 +1,18 @@
+<template name="categories">
+    <h2>Categories</h2>
+    <form name="search-category">
+        <input type="text" name="text" placeholder="Search" />
+    </form>
+    <ul>
+        {{#each categories}}
+            <li>{{ name }}<button class="delete">Remove</button></li>
+        {{else}}
+            <li>No categories found...</li>
+        {{/each}}
+        <li>
+            <form name="new-category">
+                <input type="text" name="text" placeholder="Search" />
+            </form>
+        </li>
+    </ul>
+</template>
