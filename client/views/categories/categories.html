@@ -1,17 +1,17 @@
 <template name="categories">
     <h2>Categories</h2>
     <form name="search-category">
-        <input type="text" name="text" placeholder="Search" />
+        <input type="text" name="text" class="form-control" placeholder="Search" />
     </form>
-    <ul>
+    <ul class="list-group">
         {{#each categories}}
-            <li>{{ name }}<button class="delete">Remove</button></li>
+            <li class="list-group-item">{{ name }}<button class="delete btn btn-xs btn-danger">Remove</button></li>
         {{else}}
-            <li>No categories found...</li>
+            <li class="list-group-item">No categories found...</li>
         {{/each}}
-        <li>
+        <li class="list-group-item">
             <form name="new-category">
-                <input type="text" name="text" placeholder="Search" />
+                <input type="text" name="text" class="form-control" placeholder="New category" />
             </form>
         </li>
     </ul>
