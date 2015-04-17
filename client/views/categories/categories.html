@@ -1,9 +1,11 @@
 <template name="categories">
     <h2>Categories</h2>
-    <form name="search-category">
-        <input type="text" name="text" class="form-control" placeholder="Search" />
-    </form>
     <ul class="list-group">
+        <li class="list-group-item">
+            <form name="search-category">
+                <input type="text" name="text" class="form-control" placeholder="Search" />
+            </form>
+        </li>
         {{#each categories}}
             <li class="list-group-item">{{ name }}<button class="delete btn btn-xs btn-danger">Remove</button></li>
         {{else}}
