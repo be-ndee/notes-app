@@ -1,6 +1,9 @@
-Meteor.publish('categories', function (name) {
+Meteor.publish('categories', function (text) {
     return Categories.find({
-        name: { $regex: name }
+        $or: [
+            {name: { $regex: text }},
+            {description: { $regex: text }}
+        ]
     });
 });
 
