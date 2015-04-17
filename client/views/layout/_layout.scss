@@ -2,14 +2,3 @@ body, html {
     padding: 0px;
     margin: 0px;
 }
-
-img.logo, h1.main-header {
-    display: inline-block;
-    margin: 0px;
-    vertical-align: text-top;
-
-    &.main-header {
-        height: 38px;
-        margin-top: 12px;
-    }
-}
