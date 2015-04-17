@@ -18,3 +18,9 @@ Categories.allow({
         return true;
     }
 });
+
+Categories.deny({
+    insert: function (userId, doc) {
+        return (typeof doc.name === 'undefined' || doc.name.length < 3);
+    }
+});
