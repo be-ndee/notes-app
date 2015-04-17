@@ -20,11 +20,15 @@ Template.categories.events({
     'submit form': function (event) {
         var text = event.target.text.value;
         event.target.text.value = '';
+
         var form = event.target.name;
         // create or search
         if (form === 'new-category') {
+            var description = event.target.description.value;
+            event.target.description.value = '';
             Categories.insert({
-                name: text
+                name: text,
+                description: description
             });
         } else if (form === 'search-category') {
             Session.set('categoryName', text);

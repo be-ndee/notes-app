@@ -1,20 +1,59 @@
 <template name="categories">
     <h2>Categories</h2>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <form name="search-category">
-                <input type="text" name="text" class="form-control" placeholder="Search" />
-            </form>
-        </li>
+    <div class="list-group">
+        <!-- Search category form -->
+        <div class="list-group-item">
+            <div class="row-content">
+                <form name="search-category">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="text" placeholder="Search for a category" />
+                    </div>
+                </form>
+            </div>
+        </div>
         {{#each categories}}
-            <li class="list-group-item">{{ name }}<button class="delete btn btn-xs btn-danger">Remove</button></li>
+            <!-- Category information -->
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <button class="delete btn btn-danger btn-fab btn-raised mdi-action-delete"></button>
+                </div>
+                <div class="row-content">
+                    <h1 class="list-group-item-heading">{{ name }}</h1>
+                    <p>{{#if description }}{{ description }}{{else }}No description.{{/if }}</p>
+                </div>
+            </div>
         {{else}}
-            <li class="list-group-item">No categories found...</li>
+            <!-- No category found -->
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-action-info well-material-yellow"></i>
+                </div>
+                <div class="row-content">
+                    <h1 class="list-group-item-heading">No categories found ...</h1>
+                    <p>Search for categories in the upper input field. At the bottom you can add a new category with name and description.</p>
+                </div>
+            </div>
         {{/each}}
-        <li class="list-group-item">
-            <form name="new-category">
-                <input type="text" name="text" class="form-control" placeholder="New category" />
-            </form>
-        </li>
-    </ul>
+        <!-- New category form -->
+        <div class="list-group-item">
+            <div class="row-content">
+                <form name="new-category" class="form-horizontal">
+                    <legend>New category</legend>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control input-lg" name="text" placeholder="Insert the categoryname" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">Description</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control input-lg" name="description" placeholder="Type the description here" />
+                        </div>
+                    </div>
+                    <input type="submit" style="display: none;" />
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
