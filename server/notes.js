@@ -1,4 +1,4 @@
-Meteor.publish('notes', function (text) {
+Meteor.publish('notes', function () {
     return Notes.find({});
 });
 
