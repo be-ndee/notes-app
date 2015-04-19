@@ -35,6 +35,10 @@ Template.categories.events({
         }
         return false;
     },
+    'keyup form[name=search-category]': function (event) {
+        var text = event.target.value;
+        Session.set('categoryName', text);
+    },
     'click button.delete': function (event) {
         Categories.remove(this._id);
     }
