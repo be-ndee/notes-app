@@ -1,5 +1,5 @@
 Meteor.autorun(function () {
-    Meteor.subscribe('notes'));
+    Meteor.subscribe('notes');
 });
 
 Template.notes.created = function () {
