@@ -6,6 +6,9 @@ Template.notes.created = function () {
 };
 
 Template.notes.helpers({
+    notes: function () {
+        return Notes.find({});
+    }
 });
 
 Template.notes.rendered = function () {
