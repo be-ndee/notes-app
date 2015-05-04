@@ -20,5 +20,8 @@ Template.notes.events({
     'keyup form[name=search-note]': function (event) {
         var text = event.target.value;
         Session.set('noteName', text);
+    },
+    'click button.delete': function (event) {
+        Notes.remove(this._id);
     }
 });
