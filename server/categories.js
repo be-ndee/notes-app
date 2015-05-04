@@ -8,13 +8,13 @@ Meteor.publish('categories', function (text) {
 });
 
 Categories.allow({
-    insert: function(userId, doc){
+    insert: function(userId, doc) {
         return true;
     },
-    update:  function(userId, doc, fieldNames, modifier){
+    update:  function(userId, doc, fieldNames, modifier) {
         return false;
     },
-    remove:  function(userId, doc){
+    remove:  function(userId, doc) {
         return true;
     }
 });
