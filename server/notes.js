@@ -1,19 +1,28 @@
-Meteor.publish('notes', function (text) {
+Meteor.publish('notes', function (text, category) {
+    var textFilter = {
+        text: {
+            $regex: text
+        }
+    };
+    if (typeof category === 'undefined' || category === null) {
+        return Notes.find(textFilter);
+    }
     return Notes.find({
-        $or: [
-            {text: { $regex: text }}
+        $and: [
+            textFilter,
+            {category: category}
         ]
     });
 });
 
 Notes.allow({
-    insert: function(userId, doc){
+    insert: function(userId, doc) {
         return true;
     },
-    update:  function(userId, doc, fieldNames, modifier){
+    update:  function(userId, doc, fieldNames, modifier) {
         return false;
     },
-    remove:  function(userId, doc){
+    remove:  function(userId, doc) {
         return true;
     }
 });
