@@ -1,4 +1,4 @@
-Template.registerHelper("prettifyDate", function(date) {
+Template.registerHelper('prettifyDate', function(date) {
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
