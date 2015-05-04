@@ -20,6 +20,10 @@ Notes.allow({
 
 Notes.deny({
     insert: function (userId, doc) {
-        return (typeof doc.text === 'undefined' || doc.text.length < 3);
+        return (
+            typeof doc.text === 'undefined'
+            || doc.text.length < 3
+            || !(doc.date instanceof Date)
+        );
     }
 });
