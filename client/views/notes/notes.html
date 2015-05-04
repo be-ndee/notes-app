@@ -35,4 +35,14 @@
             </div>
         {{/each}}
     </div>
+    <form name="new-note" class="form-horizontal well bs-component">
+        <h2>New note</h2>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Text</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control input-lg" name="text" placeholder="Insert the notetext" />
+            </div>
+        </div>
+        <input type="submit" style="display: none;" />
+    </form>
 </template>
