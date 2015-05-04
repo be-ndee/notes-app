@@ -19,4 +19,7 @@ Notes.allow({
 });
 
 Notes.deny({
+    insert: function (userId, doc) {
+        return (typeof doc.text === 'undefined' || doc.text.length < 3);
+    }
 });
