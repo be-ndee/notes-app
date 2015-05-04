@@ -5,7 +5,13 @@ Router.configure({
 })
 
 Router.map(function () {
-    this.route('home', { path: '/' });
-    this.route('categories', { path: '/categories' });
-    this.route('notes', { path: '/notes' });
+    this.route('home', {
+        path: '/'
+    });
+    this.route('categories', {
+        path: '/categories'
+    });
+    this.route('notes', {
+        path: '/notes'
+    });
 });
