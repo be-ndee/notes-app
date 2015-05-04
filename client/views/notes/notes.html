@@ -1,3 +1,38 @@
 <template name="notes">
     <h2>Notes</h2>
+    <div class="list-group">
+        <!-- Search note form -->
+        <div class="list-group-item">
+            <div class="row-content">
+                <form name="search-note">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="text" placeholder="Search for a note" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{#each notes}}
+            <!-- Note information -->
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <button class="delete btn btn-danger btn-fab btn-raised mdi-action-delete"></button>
+                </div>
+                <div class="row-content">
+                    <h1 class="list-group-item-heading">{{ prettifyDate date }}</h1>
+                    <p>{{ text }}</p>
+                </div>
+            </div>
+        {{else}}
+            <!-- No note found -->
+            <div class="list-group-item">
+                <div class="row-action-primary">
+                    <i class="mdi-action-info well-material-yellow"></i>
+                </div>
+                <div class="row-content">
+                    <h1 class="list-group-item-heading">No notes found ...</h1>
+                    <p>Search for notes in the upper input field. At the bottom you can add a new note with name and description.</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
 </template>
