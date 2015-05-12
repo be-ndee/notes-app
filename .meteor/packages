@@ -10,4 +10,4 @@ twbs:bootstrap
 iron:router
 fezvrasta:bootstrap-material-design
 accounts-password
-accounts-ui
+ian:accounts-ui-bootstrap-3
