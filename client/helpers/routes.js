@@ -2,7 +2,7 @@ Router.configure({
     loadingTemplate: 'loading',
     notFoundTemplate: 'notFound',
     layoutTemplate: 'layout'
-})
+});
 
 Router.map(function () {
     this.route('home', {
@@ -14,4 +14,12 @@ Router.map(function () {
     this.route('notes', {
         path: '/notes'
     });
+});
+
+Router.onBeforeAction(function() {
+    if (! Meteor.userId()) {
+        this.render('login');
+    } else {
+        this.next();
+    }
 });
